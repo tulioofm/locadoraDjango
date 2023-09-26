@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Filmes</title>
+</head>
+<body>
+    <h1>Lista de Filmes</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Duração (minutos)</th>
+                <th>Sinopse</th>
+                <th>Data de Lançamento</th>
+                <th>Nota de Avaliação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for filme in filmes %}
+                <tr>
+                    <td>{{ filme.nome }}</td>
+                    <td>{{ filme.duracao }}</td>
+                    <td>{{ filme.sinopse }}</td>
+                    <td>{{ filme.data_lancamento }}</td>
+                    <td>{{ filme.nota_avaliacao }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="5">Nenhum filme cadastrado.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
